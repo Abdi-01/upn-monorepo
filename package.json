@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "lerna run dev --stream",
+    "server": "lerna exec --scope server npm run",
+    "client": "lerna exec --scope client npm run",
     "install:server": "lerna add --scope=server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
