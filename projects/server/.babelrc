@@ -4,9 +4,13 @@
       "@babel/preset-env",
       {
         "targets": {
-          "esmodule": true
+          "esmodules": true
         }
       }
     ]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread"
   ]
 }

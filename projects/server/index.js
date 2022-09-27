@@ -1,8 +1,15 @@
 import express from "express";
 import cors from "cors";
+import db from "./database/models";
 
 const port = 8000;
 const app = express();
+
+const initDB = async () => {
+  await db.sequelize.authenticate();
+};
+
+initDB();
 
 app.use(cors());
 app.use(express.json());
