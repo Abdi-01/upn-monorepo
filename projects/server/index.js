@@ -2,7 +2,6 @@ import 'dotenv/config'; // untuk access file .env
 import express from "express";
 import cors from "cors";
 import db from "./database/models";
-import { Sequelize } from "sequelize";
 
 // #import routers
 import configRouter from './routers';
@@ -16,21 +15,7 @@ const initDB = async () => {
   await db.sequelize.authenticate();
 };
 
-// initDB();
-const checkDB = async () => {
-  try {
-    let res = new Sequelize("postgresql://abdi:007@001@localhost:5432/locadata", {
-      dialect: "postgres"
-    })
-    await res.authenticate();
-    console.log("Connection to DB Succesfully ✅")
-
-  } catch (error) {
-    console.log("Unable to connect db", error)
-  }
-}
-
-checkDB()
+initDB();
 
 app.use(cors());
 app.use(express.json());

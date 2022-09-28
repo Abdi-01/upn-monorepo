@@ -10,10 +10,10 @@ fs
         return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
     })
     .forEach(file => {
+        console.log("Check existing file", file)
         const routing = require(path.join(__dirname, file)).default;
-        console.log(file)
-        if(typeof routing == 'function'){
-            router.use(`/${file.split('.')[0]}` ,routing);
+        if (typeof routing == 'function') {
+            router.use(`/${file.split('.')[0]}`, routing);
         }
     });
 
